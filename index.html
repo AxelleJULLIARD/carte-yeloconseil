@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Axelle Julliard – Consultante indépendante | YeloConseil</title>
+<meta name="description" content="Axelle Julliard, consultante indépendante en organisation et management. Pilotage de projets et transformation, Nantes et périphérie.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Axelle Julliard – Consultante indépendante">
+<meta property="og:description" content="Organisation & management, pilotage de projets, transformation. Nantes et périphérie.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Poppins";font-weight:400;font-style:normal;font-display:swap;src:url("assets/poppins-regular.woff") format("woff")}
+@font-face{font-family:"Poppins";font-weight:500;font-style:normal;font-display:swap;src:url("assets/poppins-medium.woff") format("woff")}
+
+:root{
+  --pink:#F72093;
+  --pink-soft:#FDF0F7;
+  --pink-line:#F9D3E8;
+  --ink:#141414;
+  --muted:#4a4a4a;
+  --page:#f4f2f3;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"Poppins","Avenir Next",Avenir,"Segoe UI",system-ui,sans-serif;
+  font-weight:400;
+  color:var(--ink);
+  background:var(--page);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+}
+.card{
+  width:100%;
+  max-width:440px;
+  min-height:100vh;
+  background:#fff;
+  position:relative;
+  overflow:hidden;
+  container-type:inline-size;
+  display:flex;
+  flex-direction:column;
+}
+@media (min-width:480px){
+  body{align-items:flex-start;padding:32px 0}
+  .card{min-height:0;border-radius:36px;box-shadow:0 24px 60px rgba(20,20,20,.12)}
+}
+
+/* ---------- Contenu ---------- */
+.sheet{
+  flex:1;
+  padding:calc(30px + env(safe-area-inset-top,0px)) 28px 0;
+  display:flex;flex-direction:column;
+}
+.logo{display:block;width:min(260px,66%);height:auto}
+.identity{margin-top:34px}
+h1{
+  margin:0;
+  font-size:clamp(1.9rem,8.6cqw,2.4rem);
+  line-height:1.1;
+  font-weight:500;
+  letter-spacing:-.01em;
+}
+.role{margin:8px 0 0;font-size:1.15rem;font-weight:500;color:var(--pink)}
+.skills{margin:12px 0 0;font-size:.92rem;line-height:1.5;color:var(--muted);max-width:32ch}
+.place{display:flex;align-items:center;gap:10px;margin:16px 0 0;font-size:.92rem;color:var(--muted)}
+.place svg{flex:none}
+
+.actions{display:grid;gap:10px;margin-top:24px}
+.btn{
+  display:flex;align-items:center;gap:18px;
+  min-height:54px;padding:0 18px;
+  border-radius:14px;
+  font:inherit;font-weight:500;font-size:1rem;
+  color:var(--ink);text-decoration:none;
+  background:var(--pink-soft);
+  transition:background-color .15s ease, transform .15s ease;
+}
+.btn .label{flex:1}
+.btn svg{flex:none}
+.btn:hover{background:var(--pink-line)}
+.btn:active{transform:scale(.985)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.btn.primary{background:var(--pink);color:#fff}
+.btn.primary:hover{background:#e0107f}
+
+/* ---------- Bas : signature + portrait discret ---------- */
+.closing{
+  position:relative;
+  margin-top:28px;padding-top:24px;
+  display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr;align-items:end;
+  flex:1;
+}
+.closing::before{content:"";position:absolute;left:0;top:0;width:min(250px,62%);height:1px;background:var(--pink-line)}
+.tagline{grid-column:1 / -1;margin:0;font-size:clamp(1.3rem,6.4cqw,1.6rem);line-height:1.3;font-weight:400}
+.tagline em{font-style:normal;color:var(--pink)}
+.tagline::after{content:"";display:block;width:56px;height:4px;border-radius:2px;background:var(--pink);margin-top:20px}
+
+.figure{
+  --d:40cqw;
+  grid-column:2;
+  min-height:0;
+  position:relative;
+  width:var(--d);height:calc(var(--d) * 1.3);
+  margin-top:6px;
+  margin-bottom:calc(var(--d) * -.22);
+  /* le cercle est découpé en bas, la tête peut dépasser en haut */
+  -webkit-mask-image:linear-gradient(#000,#000),radial-gradient(circle at 50% calc(var(--d) * .8),#000 calc(var(--d) * .5 - .5px),transparent calc(var(--d) * .5));
+          mask-image:linear-gradient(#000,#000),radial-gradient(circle at 50% calc(var(--d) * .8),#000 calc(var(--d) * .5 - .5px),transparent calc(var(--d) * .5));
+  -webkit-mask-size:100% calc(var(--d) * .8),100% 100%;
+          mask-size:100% calc(var(--d) * .8),100% 100%;
+  -webkit-mask-position:0 0,0 0;
+          mask-position:0 0,0 0;
+  -webkit-mask-repeat:no-repeat;
+          mask-repeat:no-repeat;
+}
+.figure .disc{position:absolute;left:0;bottom:0;width:var(--d);height:var(--d);border-radius:50%;background:var(--pink)}
+.figure img{position:absolute;bottom:0;left:-1%;width:102%;height:auto;display:block}
+
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="sheet">
+    <img class="logo" src="assets/logo.png" alt="YeloConseil" width="1226" height="160">
+
+    <section class="identity">
+      <h1>Axelle Julliard</h1>
+      <p class="role">Consultante indépendante</p>
+      <p class="skills">Organisation &amp; Management · Pilotage de projets · Transformation</p>
+      <p class="place">
+        <svg width="20" height="24" viewBox="0 0 22 26" fill="none" aria-hidden="true"><path d="M11 1C5.9 1 2 4.9 2 9.9c0 6.6 7.3 13.7 8.2 14.5.5.5 1.1.5 1.6 0C12.7 23.6 20 16.500 20 9.900 20 4.900 16.100 1 11 1Z" fill="#F72093"/><circle cx="11" cy="9.800" r="3.300" fill="#fff"/></svg>
+        Nantes &amp; périphérie
+      </p>
+    </section>
+
+    <nav class="actions" aria-label="Me contacter">
+      <a class="btn primary" href="tel:+33686965064">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.800c1.400 2.800 3.800 5.100 6.600 6.600l2.200-2.200c.3-.3.700-.4 1-.2 1.100.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.600 21 3 13.400 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1l-2.300 2.200Z"/></svg>
+        <span class="label">Appeler</span>
+        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" stroke="#fff" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2l8 8-8 8"/></svg>
+      </a>
+      <a class="btn" href="mailto:ajulliard@yeloconseil.com">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><rect x="2" y="4" width="22" height="18" rx="3" fill="#F72093"/><path d="M4.500 8.500 13 14.500l8.500-6" stroke="#FDF0F7" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="label">Envoyer un e-mail</span>
+        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" stroke="#F72093" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2l8 8-8 8"/></svg>
+      </a>
+      <a class="btn" href="axelle-julliard.vcf" download="axelle-julliard.vcf">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="#F72093" aria-hidden="true"><circle cx="10" cy="8" r="5"/><path d="M1.500 22c0-4.600 3.800-7.500 8.500-7.500s8.500 2.900 8.500 7.500c0 .6-.4 1-1 1H2.500c-.6 0-1-.4-1-1Z"/><path d="M21 6v8M17 10h8" stroke="#F72093" stroke-width="2.400" stroke-linecap="round" fill="none"/></svg>
+        <span class="label">Ajouter à mes contacts</span>
+        <svg width="12" height="20" viewBox="0 0 12 20" fill="none" stroke="#F72093" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 2l8 8-8 8"/></svg>
+      </a>
+    </nav>
+
+    <section class="closing">
+      <p class="tagline">Faire avancer<br>les <em>transformations.</em></p>
+      <div class="figure">
+        <div class="disc" aria-hidden="true"></div>
+        <img src="assets/portrait.webp" alt="Portrait d'Axelle Julliard" width="760" height="876">
+      </div>
+    </section>
+  </div>
+</main>
+</body>
+</html>

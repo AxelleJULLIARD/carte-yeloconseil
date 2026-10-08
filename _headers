@@ -1,0 +1,6 @@
+/*.vcf
+  Content-Type: text/vcard; charset=utf-8
+  Content-Disposition: attachment; filename="axelle-julliard.vcf"
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
