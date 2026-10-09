@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Axelle Julliard – Consultante indépendante | YeloConseil</title>
+<script>(function(){function f(){var h=(window.visualViewport&&window.visualViewport.height)||window.innerHeight;document.documentElement.style.setProperty("--vh",h+"px")}f();window.addEventListener("resize",f);window.addEventListener("orientationchange",f)})();</script>
 <meta name="description" content="Axelle Julliard, consultante indépendante en organisation et management. Pilotage de projets et transformation, Nantes et périphérie.">
 <meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Axelle Julliard – Consultante indépendante">
@@ -30,98 +31,101 @@ body{
   font-family:"Poppins","Avenir Next",Avenir,"Segoe UI",system-ui,sans-serif;
   font-weight:400;
   color:var(--ink);
-  background:var(--page);
-  min-height:100vh;
+  background:#fff;
   display:flex;
   justify-content:center;
 }
+/* La carte occupe exactement l'écran : tout est dimensionné en fonction
+   de sa largeur (cqw) et de sa hauteur (cqh), donc rien ne dépasse. */
 .card{
   width:100%;
   max-width:440px;
-  min-height:100vh;
+  height:100vh;height:100svh;height:min(var(--vh,100svh),720px);
   background:#fff;
   position:relative;
   overflow:hidden;
-  container-type:inline-size;
+  container-type:size;
   display:flex;
   flex-direction:column;
 }
 @media (min-width:480px){
-  body{align-items:flex-start;padding:32px 0}
-  .card{min-height:0;border-radius:36px;box-shadow:0 24px 60px rgba(20,20,20,.12)}
+  body{align-items:center;min-height:100vh;padding:32px 0;background:var(--page)}
+  .card{height:min(860px,calc(100vh - 64px));border-radius:36px;box-shadow:0 24px 60px rgba(20,20,20,.12)}
 }
 
-/* ---------- Contenu ---------- */
 .sheet{
-  flex:1;
-  padding:calc(30px + env(safe-area-inset-top,0px)) 28px 0;
+  flex:1;min-height:0;
+  padding:calc(3.2cqh + env(safe-area-inset-top,0px)) 7.2cqw 0;
   display:flex;flex-direction:column;
 }
-.logo{display:block;width:min(260px,66%);height:auto}
-.identity{margin-top:34px}
+.logo{display:block;width:min(66%,30cqh,260px);height:auto}
+.identity{margin-top:3.6cqh}
 h1{
   margin:0;
-  font-size:clamp(1.9rem,8.6cqw,2.4rem);
+  font-size:clamp(1.45rem,min(8.6cqw,4.3cqh),2.4rem);
   line-height:1.1;
   font-weight:500;
   letter-spacing:-.01em;
 }
-.role{margin:8px 0 0;font-size:1.15rem;font-weight:500;color:var(--pink)}
-.skills{margin:12px 0 0;font-size:.92rem;line-height:1.5;color:var(--muted);max-width:32ch}
-.place{display:flex;align-items:center;gap:10px;margin:16px 0 0;font-size:.92rem;color:var(--muted)}
-.place svg{flex:none}
+.role{margin:.9cqh 0 0;font-size:clamp(.95rem,min(4.4cqw,2.5cqh),1.15rem);font-weight:500;color:var(--pink)}
+.skills{margin:1.4cqh 0 0;font-size:clamp(.76rem,min(3.6cqw,2.1cqh),.92rem);line-height:1.45;color:var(--muted);max-width:32ch}
+.place{display:flex;align-items:center;gap:10px;margin:1.8cqh 0 0;font-size:clamp(.76rem,min(3.6cqw,2.1cqh),.92rem);color:var(--muted)}
+.place svg{flex:none;height:clamp(16px,2.8cqh,24px);width:auto}
 
-.actions{display:grid;gap:10px;margin-top:24px}
+.actions{display:grid;gap:1.2cqh;margin-top:2.8cqh}
 .btn{
-  display:flex;align-items:center;gap:18px;
-  min-height:54px;padding:0 18px;
+  display:flex;align-items:center;gap:clamp(12px,4.4cqw,18px);
+  min-height:clamp(40px,6.3cqh,54px);padding:0 clamp(12px,4.6cqw,18px);
   border-radius:14px;
-  font:inherit;font-weight:500;font-size:1rem;
+  font:inherit;font-weight:500;font-size:clamp(.8rem,min(2.4cqh,4.2cqw),1rem);
   color:var(--ink);text-decoration:none;
   background:var(--pink-soft);
   transition:background-color .15s ease, transform .15s ease;
 }
 .btn .label{flex:1}
 .btn svg{flex:none}
+.btn svg:first-child{height:clamp(20px,3.1cqh,26px);width:auto}
 .btn:hover{background:var(--pink-line)}
 .btn:active{transform:scale(.985)}
 .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .btn.primary{background:var(--pink);color:#fff}
 .btn.primary:hover{background:#e0107f}
 
-/* ---------- Bas : signature + portrait discret ---------- */
+/* ---------- Bas : signature + portrait discret, côte à côte ---------- */
 .closing{
   position:relative;
-  margin-top:28px;padding-top:24px;
-  display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr;align-items:end;
-  flex:1;
+  margin-top:3cqh;padding-top:2.6cqh;
+  display:grid;grid-template-columns:1fr auto;grid-template-rows:auto;align-items:end;align-content:center;column-gap:2cqw;
+  flex:1;min-height:0;
 }
 .closing::before{content:"";position:absolute;left:0;top:0;width:min(250px,62%);height:1px;background:var(--pink-line)}
-.tagline{grid-column:1 / -1;margin:0;font-size:clamp(1.3rem,6.4cqw,1.6rem);line-height:1.3;font-weight:400}
+.tagline{align-self:center;margin:0;font-size:clamp(1rem,min(5.6cqw,3.1cqh),1.4rem);line-height:1.3;font-weight:400}
 .tagline em{font-style:normal;color:var(--pink)}
-.tagline::after{content:"";display:block;width:56px;height:4px;border-radius:2px;background:var(--pink);margin-top:20px}
+.tagline::after{content:"";display:block;width:48px;height:4px;border-radius:2px;background:var(--pink);margin-top:1.8cqh}
 
 .figure{
-  --d:40cqw;
-  grid-column:2;
-  min-height:0;
+  --d:min(34cqw,22cqh);
   position:relative;
   width:var(--d);height:calc(var(--d) * 1.3);
-  margin-top:6px;
-  margin-bottom:calc(var(--d) * -.22);
+  margin-bottom:max(calc(var(--d) * .03),3.2cqh);
   /* le cercle est découpé en bas, la tête peut dépasser en haut */
-  -webkit-mask-image:linear-gradient(#000,#000),radial-gradient(circle at 50% calc(var(--d) * .8),#000 calc(var(--d) * .5 - .5px),transparent calc(var(--d) * .5));
-          mask-image:linear-gradient(#000,#000),radial-gradient(circle at 50% calc(var(--d) * .8),#000 calc(var(--d) * .5 - .5px),transparent calc(var(--d) * .5));
-  -webkit-mask-size:100% calc(var(--d) * .8),100% 100%;
-          mask-size:100% calc(var(--d) * .8),100% 100%;
+  -webkit-mask-image:linear-gradient(#000,#000),radial-gradient(ellipse 50% 38.46% at 50% 61.54%,#000 99.6%,transparent 100%);
+          mask-image:linear-gradient(#000,#000),radial-gradient(ellipse 50% 38.46% at 50% 61.54%,#000 99.6%,transparent 100%);
+  -webkit-mask-size:100% 62.2%,100% 100%;
+          mask-size:100% 62.2%,100% 100%;
   -webkit-mask-position:0 0,0 0;
           mask-position:0 0,0 0;
   -webkit-mask-repeat:no-repeat;
           mask-repeat:no-repeat;
 }
-.figure .disc{position:absolute;left:0;bottom:0;width:var(--d);height:var(--d);border-radius:50%;background:var(--pink)}
+.figure .disc{position:absolute;left:0;bottom:0;width:100%;aspect-ratio:1;border-radius:50%;background:var(--pink)}
 .figure img{position:absolute;bottom:0;left:-1%;width:102%;height:auto;display:block}
 
+/* Sur téléphone, la barre d'outils flottante de Safari recouvre le bas de l'écran :
+   on garde le portrait au-dessus. */
+@media (pointer:coarse){.figure{margin-bottom:max(calc(var(--d) * .03),9cqh)}}
+
+@media (max-height:600px){.skills{display:none}.tagline::after{display:none}}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 </style>
 </head>
@@ -159,10 +163,10 @@ h1{
     </nav>
 
     <section class="closing">
-      <p class="tagline">Faire avancer<br>les <em>transformations.</em></p>
+      <p class="tagline">Faire avancer les<br><em>transformations.</em></p>
       <div class="figure">
         <div class="disc" aria-hidden="true"></div>
-        <img src="assets/portrait.webp" alt="Portrait d'Axelle Julliard" width="760" height="876">
+        <img src="assets/portrait.webp" alt="Portrait d'Axelle Julliard" width="760" height="861">
       </div>
     </section>
   </div>
